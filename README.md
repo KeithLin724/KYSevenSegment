@@ -17,3 +17,5 @@ you can use this command to download
 `git clone https://github.com/KeithLin724/KYSevenSegment`
 
 ---
+## About 
+the hex code need right to left to print 
