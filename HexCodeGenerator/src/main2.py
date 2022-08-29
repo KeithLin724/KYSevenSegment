@@ -1,3 +1,13 @@
+'''
+Title:Hex code generator
+Written By KYLiN
+This is a code of mini Hex code generator
+for make seven segment code 
+only one file to run easy to use 
+
+Date: 29/8/2022
+'''
+
 from copy import deepcopy
 from tkinter import *
 from functools import partial
