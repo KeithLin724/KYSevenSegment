@@ -1,4 +1,4 @@
-#include "KYSevenSegment.h"
+#include <KYSevenSegment.h>
 
 KYSevenSegment seg(13, 12, 6, 5, 4, 11, 10, 7, true);
 
