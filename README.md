@@ -22,6 +22,8 @@ you can use this command to download
 
 Here inside have a [Easy-HexCodeGenerator](/HexCodeGenerator) only one file for make seven-segment code 
 
+> ! Recommend use [HexCodeGenerator](https://github.com/KeithLin724/HexCodeGenerator)
+
 ---
 ## How to use
 ![](pic/7-segment-display-pin-diagr_0_9eWv7ceFEE.webp)
