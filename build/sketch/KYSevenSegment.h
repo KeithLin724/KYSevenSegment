@@ -1,3 +1,11 @@
+/*
+Title:KYSevenSegment
+Written By KYLiN
+This is a seven segment lib for Arduino
+easy to control seven segment display
+Date: 28/8/2022
+*/
+
 #ifndef __KY_SEVEN_SEGMENT_H__
 #define __KY_SEVEN_SEGMENT_H__
 
@@ -24,37 +32,47 @@ private: // function
     void __initPins() const;
 
 public:
-    KYSevenSegment(uint16_t pins[8], bool mode = false);
+    KYSevenSegment(uint16_t pins[8], bool inv_mode = false);
 
-    KYSevenSegment(int a, int b, int c, int d, int e, int f, int g, int dp, bool mode = false);
+    KYSevenSegment(int a, int b, int c, int d, int e, int f, int g, int dp, bool inv_mode = false);
 
     ~KYSevenSegment();
 
     //set 
-    void setInvMode(bool mode);
+    void setInvMode(bool inv_mode);
 
     void setPins(uint16_t pins[8]);
 
-    // get about the segment mode setting state 
+    /**
+     * @brief Get the Mode object
+     * get about the segment mode setting state
+     * @return true is in inv mode
+     * @return false not in inv mode
+     */
     bool getMode() const;
 
     // function 
 
-    // display the number 
+    /**
+     * @brief
+     * Display the number
+     * @param value Display the number using class library
+     * @param dp About the dp state
+     */
     void displayNumber(uint16_t value, bool dp = false) const;
 
     /**
      * @brief
-     * display using hex code
-     * @param value display hex code
-     * @param dp about the dp state
+     * Display using hex code
+     * @param value Display hex code
+     * @param dp About the dp state
      */
     void displayHex(byte value, bool dp = false) const;
 
     /**
      * @brief
-     * only display the dp
-     * @param dp about the dp state
+     * Only display the dp
+     * @param dp About the dp state
      */
     void only_display_dp(bool dp = false) const;
 

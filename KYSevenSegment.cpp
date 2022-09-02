@@ -1,19 +1,19 @@
 #include "KYSevenSegment.h"
 
-void KYSevenSegment::__displayHex_inv(byte value, bool dp, bool dp_only) const {
+void KYSevenSegment::__displayHex_inv(const byte& value, const bool& dp, const bool& dp_only = false) const {
 
     if (!dp_only) {
-        for (uint8_t i = 0; i < 8; i++) {
+        for (uint8_t i(0); i < 8; i++) {
             digitalWrite(this->_pins[i], !bitRead(value, i));
         }
     }
     digitalWrite(this->_pins[7], !dp);
 }
 
-void KYSevenSegment::__displayHex(byte value, bool dp, bool dp_only) const {
+void KYSevenSegment::__displayHex(const byte& value, const bool& dp, const bool& dp_only = false) const {
 
     if (!dp_only) {
-        for (uint8_t i = 0; i < 8; i++) {
+        for (uint8_t i(0); i < 8; i++) {
             digitalWrite(this->_pins[i], bitRead(value, i));
         }
     }
@@ -66,7 +66,7 @@ KYSevenSegment::~KYSevenSegment() {
 }
 
 //set 
-void KYSevenSegment::setInvMode(bool inv_mode) {
+void KYSevenSegment::setInvMode(const bool& inv_mode) {
     this->_inv_mode = inv_mode;
 
 }
@@ -81,7 +81,7 @@ bool KYSevenSegment::getMode() const {
     return this->_inv_mode;
 }
 // function
-void KYSevenSegment::displayNumber(uint16_t value, bool dp = false) const {
+void KYSevenSegment::displayNumber(const uint16_t& value, const bool& dp = false) const {
     if (this->_inv_mode) {
         this->__displayHex_inv(KYSevenSegment::_numberHex[value], dp);
     }
@@ -90,7 +90,7 @@ void KYSevenSegment::displayNumber(uint16_t value, bool dp = false) const {
     }
 
 }
-void KYSevenSegment::displayHex(byte value, bool dp = false) const {
+void KYSevenSegment::displayHex(const byte& value, const bool& dp = false) const {
     if (this->_inv_mode) {
         this->__displayHex_inv(value, dp);
     }
@@ -99,7 +99,7 @@ void KYSevenSegment::displayHex(byte value, bool dp = false) const {
     }
 }
 
-void KYSevenSegment::only_display_dp(bool dp = false) const {
+void KYSevenSegment::only_display_dp(const bool& dp = false) const {
     if (this->_inv_mode) {
         this->__displayHex_inv(0, dp, true);
     }

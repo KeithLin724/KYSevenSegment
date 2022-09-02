@@ -27,8 +27,8 @@ private:
     };
 
 private: // function 
-    void __displayHex_inv(byte value, bool dp, bool dp_only = false) const;
-    void __displayHex(byte value, bool dp, bool dp_only = false) const;
+    void __displayHex_inv(const byte& value, const bool& dp, const bool& dp_only = false) const;
+    void __displayHex(const byte& value, const bool& dp, const bool& dp_only = false) const;
     void __initPins() const;
 
 public:
@@ -38,13 +38,30 @@ public:
 
     ~KYSevenSegment();
 
-    //set 
-    void setInvMode(bool inv_mode);
+    //set
 
+    /**
+     * @brief Set the Inv Mode object
+     * pins output need to inverse
+     *
+     * inv_mode = False pin and signal is same
+     * inv_mode = True pin and signal is inverse
+     * @param inv_mode about the inv_mode switch
+     *
+     */
+    void setInvMode(const bool& inv_mode);
+
+
+    /**
+     * @brief Set the Pins object
+     *
+     * @param pins about the pins array obj
+     */
     void setPins(uint16_t pins[8]);
 
     /**
      * @brief Get the Mode object
+     *
      * get about the segment mode setting state
      * @return true is in inv mode
      * @return false not in inv mode
@@ -59,7 +76,8 @@ public:
      * @param value Display the number using class library
      * @param dp About the dp state
      */
-    void displayNumber(uint16_t value, bool dp = false) const;
+
+    void displayNumber(const uint16_t& value, const bool& dp = false) const;
 
     /**
      * @brief
@@ -67,14 +85,14 @@ public:
      * @param value Display hex code
      * @param dp About the dp state
      */
-    void displayHex(byte value, bool dp = false) const;
+    void displayHex(const byte& value, const bool& dp = false) const;
 
     /**
      * @brief
      * Only display the dp
      * @param dp About the dp state
      */
-    void only_display_dp(bool dp = false) const;
+    void only_display_dp(const bool& dp = false) const;
 
 private: // member 
     uint16_t _pins[8];

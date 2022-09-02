@@ -31,7 +31,7 @@ void KYSevenSegment::__initPins() const {
 
 }
 
-KYSevenSegment::KYSevenSegment(int a, int b, int c, int d, int e, int f, int g, int dp, bool mode = false) {
+KYSevenSegment::KYSevenSegment(int a, int b, int c, int d, int e, int f, int g, int dp, bool inv_mode = false) {
     this->_pins[0] = a;
     this->_pins[1] = b;
     this->_pins[2] = c;
@@ -43,15 +43,15 @@ KYSevenSegment::KYSevenSegment(int a, int b, int c, int d, int e, int f, int g, 
     this->_pins[7] = dp;
 
 
-    this->_inv_mode = mode;
+    this->_inv_mode = inv_mode;
 
     this->__initPins();
 }
 
-KYSevenSegment::KYSevenSegment(uint16_t pins[8], bool mode = false) {
-    this->_inv_mode = mode;
-    uint16_t index = 8;
-    for (uint16_t i = 0; i < index; i++) {
+KYSevenSegment::KYSevenSegment(uint16_t pins[8], bool inv_mode = false) {
+    this->_inv_mode = inv_mode;
+
+    for (uint16_t i = 0; i < 8; i++) {
         this->_pins[i] = pins[i];
     }
 
@@ -67,8 +67,8 @@ KYSevenSegment::~KYSevenSegment() {
 }
 
 //set 
-void KYSevenSegment::setMode(bool mode) {
-    this->_inv_mode = mode;
+void KYSevenSegment::setInvMode(bool inv_mode) {
+    this->_inv_mode = inv_mode;
 
 }
 void KYSevenSegment::setPins(uint16_t pints[8]) {
@@ -109,7 +109,7 @@ void KYSevenSegment::only_display_dp(bool dp = false) const {
     }
 }
 # 1 "d:\\Arduino\\Library\\KYSevenSegment\\main.ino"
-
+# 2 "d:\\Arduino\\Library\\KYSevenSegment\\main.ino" 2
 void setup()
 {
 
