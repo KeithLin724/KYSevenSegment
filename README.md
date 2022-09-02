@@ -30,14 +30,14 @@ flow the segment pins to connect and then coding
 
 ### 2 Ways to construct 
 
-```
+```c++
 KYSevenSegment(uint16_t pins[8], bool inv_mode = false);
 
 KYSevenSegment(int a, int b, int c, int d, int e, int f, int g,int dp, bool inv_mode = false);
 ```
 
 ### 2 Way to set Mode and Pins
-```
+```c++
 void setInvMode(const bool& inv_mode);
 
 void setPins(uint16_t pins[8]);
@@ -45,12 +45,12 @@ void setPins(uint16_t pins[8]);
 
 ### Getting Mode function 
 
-```
+```c++
 bool getMode() const;
 ```
 
 ### Display Function
-```
+```c++
 // Display Number 
 void displayNumber(const uint16_t& id, const bool& dp = false) const;
 
